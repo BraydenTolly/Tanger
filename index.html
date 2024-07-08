@@ -4,41 +4,58 @@
 <meta charset="UTF-8">
 <title>Histoire à Tanger</title>
 <style>
-/* CSS to style the div elements */
+/* CSS to style the div elements containing paragraphs */
 .paragraph {
-    /*
-    margin-bottom: 20px;
-    padding: 15px;
-    */
+    /* Adds space below each paragraph */
+    margin-bottom: 40px;
 }
 
 /* CSS to style the button */
 .shuffle-button {
+    /* Adds space below the button */
     margin-bottom: 10px;
+    /* Adds padding inside the button for better appearance */
+    padding: 20px 40px;
+    /* Sets the font size of the button text */
+    font-size: 24px;
+    /* Sets the background color of the button to a blue color */
+    background-color: #1E90FF; /* Tangier blue */
+    /* Sets the text color of the button to white */
+    color: white;
+    /* Removes the default border of the button */
+    border: none;
+    /* Changes the cursor to a pointer when hovering over the button */
+    cursor: pointer;
 }
 
 /* CSS to style the title */
 .title {
-    font-size: 124px;
+    /* Sets the font size of the title */
+    font-size: 72px;
+    /* Makes the font weight bold */
     font-weight: bold;
+    /* Sets the text color of the title */
     color: #333;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    /* Adds space above the title */
+    margin-top: 50px;
+    /* Adds space below the title */
+    margin-bottom: 50px;
+    /* Centers the title text */
     text-align: center;
 }
 </style>
 </head>
 <body>
 
-<!-- Button to shuffle divs -->
+<!-- Button to shuffle the order of the paragraphs -->
 <button class="shuffle-button" onclick="shuffleParagraphs()">Shuffle Paragraphs</button>
 
-<!-- Title -->
-<h1>20922789888000 Histoires à Tanger</h1>
+<!-- Title of the page -->
+<h1 class="title">20922789888000 Histoires à Tanger</h1>
 
 <!-- Container for paragraphs -->
 <div id="paragraphs-container">
-    <!-- Example divs with class 'paragraph' -->
+    <!-- Each div with the class 'paragraph' contains a paragraph of text -->
     <div class="paragraph">
         <p>Soudain, de bruyantes Chinoises envahissent la terrasse du café Hafa, lieu mythique comme le décrivent les guides, perché sur sa falaise et offrant une vue splendide sur l'océan. Son emplacement, son atmosphère, et son fameux thé à la menthe ont séduit nombre de visiteurs. Nos Chinoises donc, troublant la quiétude du moment, à l'aise comme partout ailleurs dans ce monde qui leur appartient au tiers. Comment pourrait-on s'en plaindre, alors qu’on est soi-même aussi assis ici, sur cette terrasse africaine faisant face à l'Europe, là-bas, intime et que sépare pourtant bien plus que le détroit. Ne plus les entendre, en oublier même mes capétiens ancêtres et perdre mon regard dans le maelstrom des vapeurs marines.</p>
     </div>
@@ -105,18 +122,21 @@
 </div>
 
 <script>
-// Function to shuffle div order on button click
+// Function to shuffle the order of paragraphs inside the container
 function shuffleParagraphs() {
+    // Get the container element that holds all the paragraphs
     var container = document.getElementById('paragraphs-container');
+
+    // Get an array of all div elements with the class 'paragraph' inside the container
     var divs = Array.from(container.querySelectorAll('.paragraph'));
 
-    // Shuffle array of div elements
+    // Shuffle the array of div elements by sorting with a random comparator
     divs.sort(() => Math.random() - 0.5);
 
-    // Clear existing content in container
+    // Clear the existing content inside the container
     container.innerHTML = '';
 
-    // Append shuffled divs back to container in randomized order
+    // Append the shuffled div elements back into the container
     divs.forEach(function(div) {
         container.appendChild(div);
     });
