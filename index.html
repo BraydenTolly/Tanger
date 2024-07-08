@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <title>Histoire à Tanger</title>
 <style>
+/* Define the custom font */
+@font-face {
+    font-family: 'Mastolleh';
+    src: url('Fonts/mastollehregular-ywrxv.ttf') format('truetype');
+}
+
 /* CSS to style the div elements containing paragraphs */
 .paragraph {
     /* Adds space below each paragraph */
@@ -42,6 +48,8 @@
     margin-bottom: 50px;
     /* Centers the title text */
     text-align: center;
+    /* Applies the custom font to the title */
+    font-family: 'Mastolleh', serif; /* Apply the custom font<; Fallback to serif if custom font fails to load */
 }
 </style>
 </head>
@@ -51,7 +59,7 @@
 <button class="shuffle-button" onclick="shuffleParagraphs()">Shuffle Paragraphs</button>
 
 <!-- Title of the page -->
-<h1 class="title">20922789888000 Histoires à Tanger</h1>
+<h1 class="title">20922789888000 Histoires a Tanger</h1>
 
 <!-- Container for paragraphs -->
 <div id="paragraphs-container">
